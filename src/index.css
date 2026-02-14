@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Aiman's Fashion - Luxury Color System */
+    --background: 340 30% 8%; /* Deep Burgundy-Black #1a0a0f */
+    --foreground: 40 30% 95%; /* Cream White #f5f0e8 */
+    --card: 340 25% 12%;
+    --card-foreground: 40 30% 95%;
+    --popover: 340 30% 8%;
+    --popover-foreground: 40 30% 95%;
+    --primary: 43 75% 55%; /* Rich Gold #d4a853 */
+    --primary-foreground: 340 30% 8%;
+    --secondary: 340 20% 18%;
+    --secondary-foreground: 40 30% 95%;
+    --muted: 340 15% 22%;
+    --muted-foreground: 40 20% 70%;
+    --accent: 43 75% 55%; /* Gold accent */
+    --accent-foreground: 340 30% 8%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 43 50% 50% / 0.15;
+    --input: 340 20% 18%;
+    --ring: 43 75% 55%;
+    --radius: 0.5rem;
+    
+    /* Custom luxury properties */
+    --luxury-dark: #1a0a0f;
+    --luxury-mid: #2d151c;
+    --luxury-burgundy: #4a1c28;
+    --gold-primary: #d4a853;
+    --gold-light: #e8c87a;
+    --gold-dark: #b8933f;
+    --cream-white: #f5f0e8;
+    --cream-soft: #faf7f2;
+    --champagne: #e8dfd1;
+  }
+
+  .light-section {
+    --background: 40 30% 96%; /* Cream background */
+    --foreground: 340 30% 12%;
+    --card: 40 25% 98%;
+    --card-foreground: 340 30% 12%;
+    --muted: 40 20% 92%;
+    --muted-foreground: 340 15% 40%;
+    --border: 340 30% 15% / 0.08;
+    --primary: 340 50% 25%;
+    --primary-foreground: 40 30% 96%;
+    --accent: 43 70% 50%;
+    --accent-foreground: 340 30% 8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', sans-serif;
+  }
+  
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-sans {
+    font-family: 'Manrope', sans-serif;
+  }
+  
+  .font-body {
+    font-family: 'DM Sans', sans-serif;
+  }
+}
+
+@layer components {
+  /* Gold gradient text */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 50%, var(--gold-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Gold border glow */
+  .border-gold-glow {
+    box-shadow: 0 0 20px rgba(212, 168, 83, 0.3), 0 0 40px rgba(212, 168, 83, 0.1);
+  }
+  
+  /* Viewfinder overlay effect */
+  .viewfinder {
+    position: relative;
+  }
+  
+  .viewfinder::before,
+  .viewfinder::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    z-index: 10;
+    transition: all 0.3s ease;
+  }
+  
+  .viewfinder::before {
+    top: 16px;
+    left: 16px;
+    border-top: 2px solid var(--gold-primary);
+    border-left: 2px solid var(--gold-primary);
+  }
+  
+  .viewfinder::after {
+    bottom: 16px;
+    right: 16px;
+    border-bottom: 2px solid var(--gold-primary);
+    border-right: 2px solid var(--gold-primary);
+  }
+  
+  .viewfinder-corners {
+    position: relative;
+  }
+  
+  .viewfinder-corners .corner-tr,
+  .viewfinder-corners .corner-bl {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    z-index: 10;
+  }
+  
+  .viewfinder-corners .corner-tr {
+    top: 16px;
+    right: 16px;
+    border-top: 2px solid var(--gold-primary);
+    border-right: 2px solid var(--gold-primary);
+  }
+  
+  .viewfinder-corners .corner-bl {
+    bottom: 16px;
+    left: 16px;
+    border-bottom: 2px solid var(--gold-primary);
+    border-left: 2px solid var(--gold-primary);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .tracking-tight {
+    letter-spacing: -0.025em;
+  }
+  
+  .tracking-tighter {
+    letter-spacing: -0.05em;
+  }
+}
